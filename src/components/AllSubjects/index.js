@@ -38,6 +38,11 @@ const AllSubjects = () => {
     },
   ]
 
+  const onClickLogout = () => {
+    navigate('/login')
+    Cookies.remove('jwt_token')
+  }
+
   return (
     <div className="all-subjects-container">
       <h1 className="all-subjects-heading">My Subjects</h1>
@@ -53,6 +58,13 @@ const AllSubjects = () => {
             </button>
           </Link>
         ))}
+        <button
+          type="button"
+          className="all-subject-btn logout-button"
+          onClick={onClickLogout}
+        >
+          Logout
+        </button>
       </div>
     </div>
   )

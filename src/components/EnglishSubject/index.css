@@ -8,6 +8,14 @@ body {
   color: white;
 }
 
+.show-topics {
+  display: block;
+}
+
+.each-lesson-main-heading {
+  color: #0d0d0d;
+}
+
 .container {
   max-width: 800px;
   margin: 50px auto;
@@ -22,6 +30,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #000;
 }
 
 h1 {
@@ -33,13 +43,14 @@ h1 {
 }
 
 .back-btn {
-  background-color: #ff4d4d;
+  background-color: #0d0d0d;
   color: white;
   padding: 10px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   font-size: 16px;
+  width: fit-content;
 }
 
 .back-btn:hover {
@@ -50,12 +61,15 @@ h1 {
   margin: 20px 0;
   height: 80vh;
   overflow: auto;
+  width: 50vw;
 }
 
 .dropdown-btn {
   background-color: #007bff;
   color: white;
-  padding: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin: 5px 0;
   border: none;
   border-radius: 4px;
@@ -72,18 +86,53 @@ h1 {
 .dropdown-btn:hover {
   background-color: #0056b3;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
 }
 
 .dropdown-content {
-  display: none;
-  background-color: #f9f9f9;
-  padding: 15px;
+  display: block;
+  padding: 60px;
   margin: 5px 0;
   border: 1px solid #ddd;
   border-radius: 4px;
-  color: black;
+  width: 70%;
 }
 
-.dropdown-content.show {
+/* .dropdown-content.show {
   display: block;
+} */
+.lesson-button-style {
+  background-color: transparent;
+  text-align: left;
+  color: #ffffff;
+}
+.lesson-button-style:hover {
+  color: #ffffff;
+}
+
+.icons-styles {
+  height: 30px;
+  width: 40px;
+}
+
+.detailed-container {
+  justify-content: space-between;
+  background-color: #0056b3;
+  align-items: center;
+  padding: 10px;
+}
+
+.edit-detailed {
+  height: 30px;
+  width: 40px;
+}
+
+.text-area-styles {
+  width: 100%;
+}
+
+.save-button-styles {
+  width: 70px;
+  background-color: #007bff;
+  color: #fff;
 }
