@@ -3,6 +3,8 @@ import {useNavigate} from 'react-router-dom'
 import {MdKeyboardArrowDown, MdKeyboardArrowUp} from 'react-icons/md'
 import {GrEdit} from 'react-icons/gr'
 
+import ReviewsBox from '../ReviewsBox'
+
 // import Cookies from 'js-cookie'
 
 import './index.css'
@@ -184,6 +186,14 @@ const EnglishSubject = () => {
     }
   }
 
+  const setShowTextAreaFunction = id => {
+    if (showTextArea === id) {
+      setShowTextArea(-1)
+    } else {
+      setShowTextArea(id)
+    }
+  }
+
   const handleSaveToLocalStorage = key => {
     localStorage.setItem(key, textArea)
   }
@@ -226,26 +236,13 @@ const EnglishSubject = () => {
                   <li>Second Point</li>
                 </ul>
                 <div className="edit-detailed">
-                  <GrEdit onClick={() => setShowTextArea(eachLesson.id)} />
+                  <GrEdit
+                    onClick={() => setShowTextAreaFunction(eachLesson.id)}
+                  />
                 </div>
                 {showTextArea === eachLesson.id && (
                   <>
-                    <textArea
-                      rows={4}
-                      cols={50}
-                      placeholder="Enter text..."
-                      className="text-area-styles"
-                      onChange={event => setTextArea(event.target.value)}
-                    >
-                      {textArea}
-                    </textArea>
-                    <button
-                      type="button"
-                      className="save-button-styles"
-                      onClick={() => handleSaveToLocalStorage(eachLesson.id)}
-                    >
-                      Save
-                    </button>
+                    <ReviewsBox id={eachLesson.id} />
                   </>
                 )}
               </div>
