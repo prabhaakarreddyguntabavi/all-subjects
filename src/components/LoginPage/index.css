@@ -178,3 +178,36 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.code-input-container {
+  display: flex;
+  justify-content: center; /* Center the input fields */
+  margin-top: 1rem;
+}
+
+.code-input {
+  width: 40px; /* Adjust width */
+  height: 40px; /* Adjust height */
+  margin: 0 5px;
+  font-size: 20px;
+  text-align: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+@media (max-width: 767px) {
+  .code-input {
+    width: 20px; /* Adjust width */
+    height: 20px; /* Adjust height */
+  }
+}
+
+/* Optional: Add styles for focus state */
+.code-input:focus {
+  outline: none;
+  border-color: #007bff; /* Example color */
+}
+
+.login-lable-styles {
+  color: #000;
+}

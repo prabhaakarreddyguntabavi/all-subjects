@@ -1,100 +1,42 @@
-import {useState, useEffect} from 'react'
-import {
-  Editor,
-  EditorState,
-  RichUtils,
-  convertFromRaw,
-  convertToRaw,
-} from 'draft-js'
-import 'draft-js/dist/Draft.css'
-
+import {useState} from 'react'
 import './index.css'
 
 const ReviewsBox = ({id}) => {
-  const [editorState, setEditorState] = useState(() => {
-    const storedContent = localStorage.getItem(`reviewsContent_${id}`)
-    if (storedContent) {
-      const contentState = convertFromRaw(JSON.parse(storedContent))
-      return EditorState.createWithContent(contentState)
-    }
-    return EditorState.createEmpty()
+  const [googleDocsLink, setGoogleDocsLink] = useState(() => {
+    const savedLink = localStorage.getItem(id)
+    return savedLink || ''
   })
 
-  const handleKeyCommand = command => {
-    const newState = RichUtils.handleKeyCommand(editorState, command)
-    if (newState) {
-      setEditorState(newState)
-      return 'handled'
-    }
-    return 'not-handled'
-  }
-
-  const onChange = newEditorState => {
-    setEditorState(newEditorState)
-  }
-
-  useEffect(() => {
-    const storedContent = localStorage.getItem(`reviewsContent_${id}`)
-    if (storedContent) {
-      const contentState = convertFromRaw(JSON.parse(storedContent))
-      setEditorState(EditorState.createWithContent(contentState))
-    } else {
-      setEditorState(EditorState.createEmpty())
-    }
-  }, [id])
-
-  const toggleStyle = style => {
-    onChange(RichUtils.toggleInlineStyle(editorState, style))
-  }
-
-  const saveContentToLocalStorage = () => {
-    const contentState = editorState.getCurrentContent()
-    const serializedContent = JSON.stringify(convertToRaw(contentState))
-    localStorage.setItem(`reviewsContent_${id}`, serializedContent)
+  const handleSaveClick = () => {
+    localStorage.setItem(id, googleDocsLink)
   }
 
   return (
     <div className="reviews-box">
-      <div className="reviews-toolbar">
-        <div className="all-options">
-          <button
-            type="button"
-            className="toolbar-btn"
-            onClick={() => toggleStyle('BOLD')}
-          >
-            B
-          </button>
-          <button
-            type="button"
-            className="toolbar-btn"
-            onClick={() => toggleStyle('ITALIC')}
-          >
-            I
-          </button>
-          <button
-            type="button"
-            className="toolbar-btn"
-            onClick={() => toggleStyle('UNDERLINE')}
-          >
-            U
-          </button>
-        </div>
+      <div className="input-element-link-container">
+        <input
+          type="text"
+          className="reviews-input"
+          placeholder="Enter your Google Docs link here..."
+          value={googleDocsLink}
+          onChange={event => setGoogleDocsLink(event.target.value)}
+        />
         <button
           type="button"
-          className="save-btn"
-          onClick={saveContentToLocalStorage}
+          className="google-link-save-button"
+          onClick={handleSaveClick}
         >
           Save
         </button>
       </div>
-      <div className="editor-container">
-        <Editor
-          editorState={editorState}
-          onChange={onChange}
-          handleKeyCommand={handleKeyCommand}
-          className="text-editor-container"
+      {googleDocsLink && (
+        <iframe
+          title="Google Docs Viewer"
+          src={googleDocsLink}
+          className="google-docs-iframe"
+          frameBorder="0"
         />
-      </div>
+      )}
     </div>
   )
 }

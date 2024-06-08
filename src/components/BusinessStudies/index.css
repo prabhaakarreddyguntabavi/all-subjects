@@ -77,7 +77,9 @@ h1 {
   text-align: left;
   outline: none;
   font-size: 18px;
-  transition: background-color 0.3s, box-shadow 0.3s;
+  transition:
+    background-color 0.3s,
+    box-shadow 0.3s;
 }
 
 .dropdown-btn:hover {
@@ -86,14 +88,14 @@ h1 {
   color: #ffffff;
 }
 
-.dropdown-content {
+/* .dropdown-content {
   display: block;
   padding: 60px;
   margin: 5px 0;
   border: 1px solid #ddd;
   border-radius: 4px;
   width: 70%;
-}
+} */
 
 /* .dropdown-content.show {
   display: block;
@@ -132,4 +134,35 @@ h1 {
   width: 70px;
   background-color: #007bff;
   color: #fff;
+}
+
+.business-dropdown-content {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.business-dropdown-content li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  border: 1px solid #007bff; /* Border style */
+  border-radius: 5px; /* Rounded corners */
+  background-color: #f0f0f0; /* Background color */
+  padding: 10px; /* Padding */
+  text-align: start;
+  color: black;
+}
+
+.business-dropdown-content li:before {
+  content: '';
+  display: inline-block;
+  width: 10px; /* Width of the numbering box */
+  height: 10px; /* Height of the numbering box */
+  background-color: #007bff; /* Numbering box background color */
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  line-height: 20px;
+  border-radius: 50%; /* Make it a circle */
+  margin-right: 10px;
 }

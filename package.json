@@ -18,7 +18,8 @@
     "react-icons": "5.2.1",
     "react-router-dom": "6.23.1",
     "react-slate": "0.5.1",
-    "slate": "0.103.0"
+    "slate": "0.103.0",
+    "uuid": "9.0.1"
   },
   "devDependencies": {
     "eslint-config-airbnb": "18.2.1",
