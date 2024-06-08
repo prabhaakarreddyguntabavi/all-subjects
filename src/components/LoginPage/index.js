@@ -50,7 +50,12 @@ const LoginPage = () => {
 
   return (
     <div className="login-container">
-      <h1>Welcome to TaskList Pro</h1>
+      <img
+        src="https://res.cloudinary.com/dwdq2ofjm/image/upload/v1717848506/Designer_rnyp3p.png"
+        alt=""
+        className="login-page-logo"
+      />
+      <h1>TaskList Pro</h1>
       <div className="card">
         <form className="form-group">
           <label className="login-lable-styles" htmlFor="codeid">

@@ -211,3 +211,17 @@ a:hover {
 .login-lable-styles {
   color: #000;
 }
+
+.login-page-logo {
+  width: 138px;
+  height: 138px;
+  border-radius: 67px;
+  margin-bottom: 10px;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
