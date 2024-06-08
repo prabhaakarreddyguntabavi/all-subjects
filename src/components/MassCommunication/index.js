@@ -91,7 +91,9 @@ const MassCommunication = () => {
         <button type="button" className="back-btn" onClick={backToAllSubjects}>
           Back
         </button>
-        <h1 className="each-lesson-main-heading">My English Subjects</h1>
+        <h1 className="each-lesson-main-heading">
+          My Mass Communication Subjects
+        </h1>
       </div>
       <div className="dropdown-container">
         {allSubjectsLessions.map(eachLesson => (
