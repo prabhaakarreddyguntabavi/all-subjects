@@ -48,6 +48,12 @@ const LoginPage = () => {
     }
   }
 
+  const handleKeyPress = event => {
+    if (event.key === 'Enter') {
+      onLoginButton()
+    }
+  }
+
   return (
     <div className="login-container">
       <img
@@ -73,6 +79,7 @@ const LoginPage = () => {
                 value={value}
                 onChange={e => handleInputChange(index, e.target.value)}
                 onKeyDown={e => handleBackspace(index, e)}
+                onKeyPress={handleKeyPress}
               />
             ))}
           </div>
