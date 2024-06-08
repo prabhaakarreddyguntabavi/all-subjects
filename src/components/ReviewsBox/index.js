@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import {useState, useEffect} from 'react'
 import {
   Editor,
   EditorState,
@@ -8,7 +8,6 @@ import {
 } from 'draft-js'
 import 'draft-js/dist/Draft.css'
 
-import {MdFormatBold, MdFormatItalic, MdFormatUnderlined} from 'react-icons/md'
 import './index.css'
 
 const ReviewsBox = ({id}) => {
@@ -79,20 +78,6 @@ const ReviewsBox = ({id}) => {
           >
             U
           </button>
-          <button
-            type="button"
-            className="toolbar-btn"
-            onClick={() => toggleStyle('unordered-list-item')}
-          >
-            <span>&#8226;</span> {/* Dot */}
-          </button>
-          <button
-            type="button"
-            className="toolbar-btn"
-            onClick={() => toggleStyle('ordered-list-item')}
-          >
-            1. {/* Numbering */}
-          </button>
         </div>
         <button
           type="button"
@@ -107,6 +92,7 @@ const ReviewsBox = ({id}) => {
           editorState={editorState}
           onChange={onChange}
           handleKeyCommand={handleKeyCommand}
+          className="text-editor-container"
         />
       </div>
     </div>

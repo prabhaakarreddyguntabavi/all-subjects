@@ -10,153 +10,47 @@ import ReviewsBox from '../ReviewsBox'
 import './index.css'
 
 const allSubjectsLessions = [
+  {id: 'HM-1', lesson: 'Ethics In Daily Life'},
+  {id: 'HM-2', lesson: 'Family Health and Security'},
+  {id: 'HM-3', lesson: 'Food, Nutrition and Health'},
+  {id: 'HM-4', lesson: 'Meal Planning'},
+  {id: 'HM-5', lesson: 'Nutritional Status'},
+  {id: 'HM-6', lesson: 'Purchase and Storage of Food'},
+  {id: 'HM-7', lesson: 'Preparation of Food'},
+  {id: 'HM-8', lesson: 'Food Preservation'},
+  {id: 'HM-9', lesson: 'Family Resources Management'},
+  {id: 'HM-10', lesson: 'Time and Energy Management'},
+  {id: 'HM-11', lesson: 'Space Management'},
+  {id: 'HM-12', lesson: 'Income Management'},
+  {id: 'HM-13', lesson: 'Energy Conservation'},
+  {id: 'HM-14', lesson: 'Environment Management'},
+  {id: 'HM-15', lesson: 'Household Equipment'},
+  {id: 'HM-16', lesson: 'Consumer Education'},
+  {id: 'HM-17', lesson: 'Growth and Development (0-5)'},
+  {id: 'HM-18', lesson: 'Growth and Development (6-11)'},
+  {id: 'HM-19', lesson: 'Adolescence'},
+  {id: 'HM-20', lesson: 'Concerns and Issues in Human Development'},
+  {id: 'HM-21', lesson: 'Introduction to Fabric Sciences'},
+  {id: 'HM-22', lesson: "Yarn and it's construction"},
+  {id: 'HM-23', lesson: 'Fabric Construction'},
+  {id: 'HM-24', lesson: 'Textile Finishes'},
+  {id: 'HM-25', lesson: 'Selection of Textiles and Clothing'},
+  {id: 'HM-26', lesson: 'Care and Maintenance'},
   {
-    id: 1,
-    lesson: '1 - My First Steps',
+    id: 'HM-27',
+    lesson: 'Optional Module (Choose any one of the following two)',
   },
-  {
-    id: 2,
-    lesson: '2 - Leisure',
-  },
-  {
-    id: 3,
-    lesson: '3 - Reading With Understanding',
-  },
-  {
-    id: 4,
-    lesson: '4 - Father, Dear Father',
-  },
-  {
-    id: 5,
-    lesson: '5 - Fuel of the Future',
-  },
-  {
-    id: 6,
-    lesson: '6 - My Grandmothers House',
-  },
-  {
-    id: 7,
-    lesson: '7 - Reading With Understanding',
-  },
-  {
-    id: 8,
-    lesson: '8 - A Case of Suspicion',
-  },
-  {
-    id: 9,
-    lesson: '9 - My Son will not a Beggar be',
-  },
-  {
-    id: 10,
-    lesson: '10 - Where the Mind is Without Fear',
-  },
-  {
-    id: 11,
-    lesson: '11 - Reading With Understanding',
-  },
-  {
-    id: 12,
-    lesson: '12 - If I Were You',
-  },
-  {
-    id: 13,
-    lesson: '13 - The Tiger in the Tunnel',
-  },
-  {
-    id: 14,
-    lesson: '14 - The Road not Taken',
-  },
-  {
-    id: 15,
-    lesson: '15 - Reading With Understanding',
-  },
-  {
-    id: 16,
-    lesson: '16 - I Must Know the Truth',
-  },
-  {
-    id: 17,
-    lesson: '17 - India-Her Past and Future',
-  },
-  {
-    id: 18,
-    lesson: '18 - Night of the Scorpion',
-  },
-  {
-    id: 19,
-    lesson: '19 - Reading With Understanding',
-  },
-  {
-    id: 20,
-    lesson: '20 - Reading With Understanding',
-  },
-  {
-    id: 21,
-    lesson: '21 - Reading With Understanding',
-  },
-  {
-    id: 22,
-    lesson: '22 - Reading With Understanding',
-  },
-  {
-    id: 23,
-    lesson: '23 - Reading With Understanding',
-  },
-  {
-    id: 24,
-    lesson: '24 - Reading With Understanding',
-  },
-  {
-    id: 25,
-    lesson: '25 - Bholi',
-  },
-  {
-    id: 26,
-    lesson: '26A - The Reception Desk and You',
-  },
-  {
-    id: 27,
-    lesson: '27A - Managing The Telephone',
-  },
-  {
-    id: 28,
-    lesson: '28A - Analysing Turns in Telephoning',
-  },
-  {
-    id: 29,
-    lesson: '29A - Controlling Strategies and Out-Going Calls',
-  },
-  {
-    id: 30,
-    lesson: '30A - Aids for a Receptionist',
-  },
-  {
-    id: 31,
-    lesson: '26B - Face to face Communication in Business',
-  },
-  {
-    id: 32,
-    lesson: '27B - Writing Memos and Letters',
-  },
-  {
-    id: 33,
-    lesson: '28B - Writing e-mails',
-  },
-  {
-    id: 34,
-    lesson: '29B - Writing Reports',
-  },
-  {
-    id: 35,
-    lesson: '30B - Writing Job Applications',
-  },
-  {
-    id: 36,
-    lesson: '31B - Appearing for an Interview',
-  },
+  {id: 'HM-28', lesson: 'A. Housekeeping Introduction to Housekeeping'},
+  {id: 'HM-29', lesson: 'Cleaning and Cleaning Materials'},
+  {id: 'HM-30', lesson: 'Maintenance of Premises'},
+  {id: 'HM-31', lesson: 'Aesthetics at Home'},
+  {id: 'HM-32', lesson: 'Creative Hand Embroidery'},
+  {id: 'HM-33', lesson: 'The Design'},
+  {id: 'HM-34', lesson: 'Colour'},
+  {id: 'HM-35', lesson: 'Embroidery Stitches'},
 ]
 
-const EnglishSubject = () => {
+const HomeScience = () => {
   const [showTopics, setSelectedLesson] = useState(-1)
   const [showTextArea, setShowTextArea] = useState(-1)
   const [textArea, setTextArea] = useState('')
@@ -250,4 +144,4 @@ const EnglishSubject = () => {
   )
 }
 
-export default EnglishSubject
+export default HomeScience

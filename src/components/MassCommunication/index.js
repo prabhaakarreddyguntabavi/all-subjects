@@ -10,153 +10,44 @@ import ReviewsBox from '../ReviewsBox'
 import './index.css'
 
 const allSubjectsLessions = [
+  {id: 'MC-1', lesson: '1. Introduction to Communication'},
+  {id: 'MC-2', lesson: '2. Mass Communication'},
+  {id: 'MC-3', lesson: '3. Role and Impact of Mass Media'},
+  {id: 'MC-4', lesson: '4. Development Communication'},
+  {id: 'MC-5', lesson: '5. Introduction to Print Media'},
+  {id: 'MC-6', lesson: '6. What is News?'},
+  {id: 'MC-7', lesson: '7. Reporting and Editing'},
+  {id: 'MC-8', lesson: '8. Language Press in India'},
+  {id: 'MC-9', lesson: '9. Characteristics of Radio'},
+  {id: 'MC-10', lesson: '10. The Radio Station'},
+  {id: 'MC-11', lesson: '11. Formats of Radio Programmes'},
+  {id: 'MC-12', lesson: '12. Radio Programme Production'},
+  {id: 'MC-13', lesson: '13. Television in India'},
+  {id: 'MC-14', lesson: '14. Role of Television as a Mass Medium'},
+  {id: 'MC-15', lesson: '15. Television Channels'},
+  {id: 'MC-16', lesson: '16. Television Program Production'},
+  {id: 'MC-17', lesson: '17. Advertising - An Introduction'},
+  {id: 'MC-18', lesson: '18. Advertising - An Industry'},
+  {id: 'MC-19', lesson: '19. Public Relations - An Introduction'},
+  {id: 'MC-20', lesson: '20. Public Relations - Tools'},
+  {id: 'MC-21', lesson: '21. Characteristics of New Media'},
+  {id: 'MC-22', lesson: '22. New Media: The Industry'},
+  {id: 'MC-23', lesson: '23. New Media: Target Audience'},
+  {id: 'MC-24', lesson: '24. New Media: Employment Opportunities'},
+  {id: 'MC-25A', lesson: '25A. Introduction to Traditional Media'},
+  {id: 'MC-25B', lesson: '25B. Introduction to Photography'},
+  {id: 'MC-26A', lesson: '26A. Types of Traditional Media'},
+  {id: 'MC-26B', lesson: '26B. The Camera'},
   {
-    id: 1,
-    lesson: '1 - My First Steps',
+    id: 'MC-27A',
+    lesson: '27A. Comparison of Traditional Media with Electronic Media',
   },
-  {
-    id: 2,
-    lesson: '2 - Leisure',
-  },
-  {
-    id: 3,
-    lesson: '3 - Reading With Understanding',
-  },
-  {
-    id: 4,
-    lesson: '4 - Father, Dear Father',
-  },
-  {
-    id: 5,
-    lesson: '5 - Fuel of the Future',
-  },
-  {
-    id: 6,
-    lesson: '6 - My Grandmothers House',
-  },
-  {
-    id: 7,
-    lesson: '7 - Reading With Understanding',
-  },
-  {
-    id: 8,
-    lesson: '8 - A Case of Suspicion',
-  },
-  {
-    id: 9,
-    lesson: '9 - My Son will not a Beggar be',
-  },
-  {
-    id: 10,
-    lesson: '10 - Where the Mind is Without Fear',
-  },
-  {
-    id: 11,
-    lesson: '11 - Reading With Understanding',
-  },
-  {
-    id: 12,
-    lesson: '12 - If I Were You',
-  },
-  {
-    id: 13,
-    lesson: '13 - The Tiger in the Tunnel',
-  },
-  {
-    id: 14,
-    lesson: '14 - The Road not Taken',
-  },
-  {
-    id: 15,
-    lesson: '15 - Reading With Understanding',
-  },
-  {
-    id: 16,
-    lesson: '16 - I Must Know the Truth',
-  },
-  {
-    id: 17,
-    lesson: '17 - India-Her Past and Future',
-  },
-  {
-    id: 18,
-    lesson: '18 - Night of the Scorpion',
-  },
-  {
-    id: 19,
-    lesson: '19 - Reading With Understanding',
-  },
-  {
-    id: 20,
-    lesson: '20 - Reading With Understanding',
-  },
-  {
-    id: 21,
-    lesson: '21 - Reading With Understanding',
-  },
-  {
-    id: 22,
-    lesson: '22 - Reading With Understanding',
-  },
-  {
-    id: 23,
-    lesson: '23 - Reading With Understanding',
-  },
-  {
-    id: 24,
-    lesson: '24 - Reading With Understanding',
-  },
-  {
-    id: 25,
-    lesson: '25 - Bholi',
-  },
-  {
-    id: 26,
-    lesson: '26A - The Reception Desk and You',
-  },
-  {
-    id: 27,
-    lesson: '27A - Managing The Telephone',
-  },
-  {
-    id: 28,
-    lesson: '28A - Analysing Turns in Telephoning',
-  },
-  {
-    id: 29,
-    lesson: '29A - Controlling Strategies and Out-Going Calls',
-  },
-  {
-    id: 30,
-    lesson: '30A - Aids for a Receptionist',
-  },
-  {
-    id: 31,
-    lesson: '26B - Face to face Communication in Business',
-  },
-  {
-    id: 32,
-    lesson: '27B - Writing Memos and Letters',
-  },
-  {
-    id: 33,
-    lesson: '28B - Writing e-mails',
-  },
-  {
-    id: 34,
-    lesson: '29B - Writing Reports',
-  },
-  {
-    id: 35,
-    lesson: '30B - Writing Job Applications',
-  },
-  {
-    id: 36,
-    lesson: '31B - Appearing for an Interview',
-  },
+  {id: 'MC-27B', lesson: '27B. Photojournalism'},
+  {id: 'MC-28A', lesson: '28A. Communication through Traditional Media'},
+  {id: 'MC-28B', lesson: '28B. Role of a Photojournalist'},
 ]
 
-const EnglishSubject = () => {
+const MassCommunication = () => {
   const [showTopics, setSelectedLesson] = useState(-1)
   const [showTextArea, setShowTextArea] = useState(-1)
   const [textArea, setTextArea] = useState('')
@@ -250,4 +141,4 @@ const EnglishSubject = () => {
   )
 }
 
-export default EnglishSubject
+export default MassCommunication

@@ -10,7 +10,6 @@ const AllSubjects = () => {
   useEffect(() => {
     const jwtToken = Cookies.get('jwt_token')
     if (jwtToken === undefined) {
-      console.log('JWT Token is undefined, redirecting to login...')
       navigate('/login')
     }
   }, [navigate])
