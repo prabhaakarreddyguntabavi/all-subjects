@@ -73,7 +73,7 @@ const LoginPage = () => {
                 key={uuidFenteator}
                 ref={inputRefs.current[index]}
                 id={`code-input-${index}`}
-                type="text"
+                type="number"
                 maxLength="1"
                 className="code-input"
                 value={value}
