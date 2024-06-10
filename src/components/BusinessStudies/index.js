@@ -1,15 +1,11 @@
-import {useState, useEffect} from 'react'
+import {useState} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {MdKeyboardArrowDown, MdKeyboardArrowUp} from 'react-icons/md'
 import {GrEdit} from 'react-icons/gr'
-
 import ReviewsBox from '../ReviewsBox'
-
-// import Cookies from 'js-cookie'
-
 import './index.css'
 
-const allSubjectsLessions = [
+const allSubjectsLessons = [
   {
     id: 'BS-1',
     lesson: '1 - Nature and Scope of Business',
@@ -28,7 +24,55 @@ const allSubjectsLessions = [
       'Commerce: Distribution of goods and services, including trade and auxiliaries like transport, warehousing, insurance, and banking to overcome trade obstacles.',
     ],
   },
-  {id: 'BS-2', lesson: '2 - Business Support Services', mainPoints: []},
+  {
+    id: 'BS-2',
+    lesson: '2 - Business Support Services',
+    mainPoints: [
+      "Here's a summary of the main points from the provided document, organized by topic:",
+      '### Introduction to Business Support Services',
+      '- Meaning and Importance: Business support services are essential for smooth business operations, assisting from the purchase of raw materials to product delivery. These services include banking, insurance, transportation, warehousing, and communication.',
+      '### Types of Business Support Services',
+      '- Banking: Provides finance, payment facilities, and other financial services.',
+      '- Insurance: Offers coverage for various business risks.',
+      '- Transportation: Facilitates the physical movement of goods.',
+      '- Communication: Ensures information exchange among producers, middlemen, and consumers.',
+      '- Warehousing: Provides storage facilities to meet seasonal demand variations.',
+      '### Banking',
+      '- Definition: Banking involves accepting deposits, granting loans, and providing other financial services. Banks act as intermediaries dealing with public money.',
+      '- Importance:',
+      '  - Capital formation',
+      '  - Services to business',
+      '  - Reducing currency use',
+      '  - Mobilizing savings',
+      '  - Supporting the rural economy',
+      '  - Ensuring balanced economic development',
+      '  - Developing credit policies',
+      '- Types of Banks:',
+      '  - Commercial Banks: Serve the general public, offering deposits and loans.',
+      '    - Public Sector Banks: Majority stake held by the government.',
+      '    - Private Sector Banks: Majority share capital held by private individuals.',
+      '    - Foreign Banks: Incorporated in foreign countries, operating branches domestically.',
+      '  - Co-operative Banks: Owned and managed by members, focusing on self-help and mutual assistance.',
+      '    - Types: Primary credit societies, central co-operative banks, state co-operative banks.',
+      '  - Development Banks: Provide long-term credit for capital-intensive investments.',
+      '  - Specialized Banks: Focus on specific activities, e.g., EXIM Bank, SIDBI, NABARD.',
+      '  - Central Bank: Guides and regulates the banking system, e.g., Reserve Bank of India (RBI).',
+      '- Functions of Commercial Banks:',
+      '  - Primary Functions:',
+      '    - Accepting Deposits: From public, offering various deposit accounts.',
+      '    - Lending Money: Providing loans and advances to customers.',
+      '  - Secondary Functions:',
+      '    - Agency Services: Collection/payment of cheques and bills, purchase/sale of securities, payment of expenses, etc.',
+      '    - General Utility Services: Issuing drafts, letters of credit, safe deposit lockers, ATM cards, internet banking, etc.',
+      '### Types of Bank Accounts',
+      '- Saving Deposit Account: Encourages savings with small initial deposits, limited withdrawals, and lower interest rates.',
+      '- Current Deposit Account: Facilitates frequent deposits and withdrawals for businesses, no interest, overdraft facilities.',
+      '- Fixed Deposit Account: Fixed sum for a specified period, higher interest rates, no withdrawal during the period.',
+      '- Recurring Deposit Account: Regular monthly deposits for a specified period, cumulative interest, no early withdrawals.',
+      '### Banking Services',
+      '- Issue of Bank Draft: Safe and convenient money transfer from one place to another, involves payment of a sum plus commission, processed through bank branches.',
+    ],
+  },
   {id: 'BS-3', lesson: '3 - Business Environment', mainPoints: []},
   {id: 'BS-4', lesson: '4 - Forms of Business Organisations', mainPoints: []},
   {
@@ -62,12 +106,12 @@ const allSubjectsLessions = [
   {id: 'BS-21', lesson: '21 - Job Employment', mainPoints: []},
   {id: 'BS-22', lesson: '22 - Skill Development', mainPoints: []},
   {id: 'BS-23', lesson: '23 - Modern Modes of Business', mainPoints: []},
+  // Add other lessons as needed
 ]
 
 const BusinessStudies = () => {
-  const [showTopics, setSelectedLesson] = useState(-1)
+  const [showTopics, setShowTopics] = useState(-1)
   const [showTextArea, setShowTextArea] = useState(-1)
-  const [textArea, setTextArea] = useState('')
 
   const navigate = useNavigate()
 
@@ -75,31 +119,12 @@ const BusinessStudies = () => {
     navigate('/')
   }
 
-  useEffect(() => {
-    const storedData = localStorage.getItem(showTopics)
-    if (storedData) {
-      setTextArea(storedData)
-    } else {
-      setTextArea('')
-    }
-  }, [showTopics])
-
-  console.log('TextArea Value:', textArea)
-
-  const onClickCallFunction = id => {
-    if (showTopics === id) {
-      setSelectedLesson(-1)
-    } else {
-      setSelectedLesson(id)
-    }
+  const onClickToggleLesson = id => {
+    setShowTopics(prevId => (prevId === id ? -1 : id))
   }
 
-  const setShowTextAreaFunction = id => {
-    if (showTextArea === id) {
-      setShowTextArea(-1)
-    } else {
-      setShowTextArea(id)
-    }
+  const onClickToggleTextArea = id => {
+    setShowTextArea(prevId => (prevId === id ? -1 : id))
   }
 
   return (
@@ -113,40 +138,71 @@ const BusinessStudies = () => {
         </h1>
       </div>
       <div className="dropdown-container">
-        {allSubjectsLessions.map(eachLesson => (
+        {allSubjectsLessons.map(eachLesson => (
           <div key={eachLesson.id}>
             <div className="dropdown-btn">
               <button
                 className="lesson-button-style"
                 type="button"
-                onClick={() => onClickCallFunction(eachLesson.id)}
+                onClick={() => onClickToggleLesson(eachLesson.id)}
               >
                 {eachLesson.lesson}
               </button>
               {showTopics === eachLesson.id ? (
                 <MdKeyboardArrowUp
                   className="icons-styles"
-                  onClick={() => onClickCallFunction(eachLesson.id)}
+                  onClick={() => onClickToggleLesson(eachLesson.id)}
                 />
               ) : (
                 <MdKeyboardArrowDown
                   className="icons-styles"
-                  onClick={() => onClickCallFunction(eachLesson.id)}
+                  onClick={() => onClickToggleLesson(eachLesson.id)}
                 />
               )}
             </div>
             {showTopics === eachLesson.id && (
               <div className="detailed-container">
-                {eachLesson.mainPoints.length > 0 && (
-                  <ul className="business-dropdown-content">
-                    {eachLesson.mainPoints.map(point => (
-                      <li key={point}>{point}</li>
-                    ))}
-                  </ul>
-                )}
+                <div className="business-dropdown-content">
+                  {eachLesson.mainPoints.map((point, index) => {
+                    if (point.startsWith('#')) {
+                      // Increase font size for headings
+                      const level = point.match(/^#+/)[0].length
+                      const text = point.slice(level)
+                      const fontSize = 24 - level * 4 // Decreasing font size for higher levels
+                      return (
+                        <span key={index} style={{fontSize: `${fontSize}px`}}>
+                          {text}
+                        </span>
+                      )
+                    } else if (point.startsWith('**')) {
+                      // Bold text
+                      const text = point.slice(2)
+                      return (
+                        <span key={index} style={{fontWeight: 'bold'}}>
+                          {text}
+                        </span>
+                      )
+                    } else if (point.startsWith('-')) {
+                      if (point.startsWith('**')) {
+                        // Bold text
+                        const text = point.slice(2)
+                        return (
+                          <li key={index} style={{fontWeight: 'bold'}}>
+                            {text}
+                          </li>
+                        )
+                      }
+                      // List items for points
+                      return <li key={index}>{point.slice(2)}</li>
+                    } else {
+                      // Normal text
+                      return <p key={index}>{point}</p>
+                    }
+                  })}
+                </div>
                 <div className="edit-detailed">
                   <GrEdit
-                    onClick={() => setShowTextAreaFunction(eachLesson.id)}
+                    onClick={() => onClickToggleTextArea(eachLesson.id)}
                   />
                 </div>
                 {showTextArea === eachLesson.id && (
