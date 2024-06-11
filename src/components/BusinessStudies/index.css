@@ -153,19 +153,19 @@ h1 {
   color: black;
 }
 
-.business-dropdown-content li:before {
+/* .business-dropdown-content li:before {
   content: '';
   display: inline-block;
-  width: 10px; /* Width of the numbering box */
-  height: 10px; /* Height of the numbering box */
-  background-color: #007bff; /* Numbering box background color */
+  width: 10px;
+  height: 10px; 
+  background-color: #007bff; 
   color: black;
   font-weight: bold;
   text-align: center;
   line-height: 20px;
-  border-radius: 50%; /* Make it a circle */
+  border-radius: 50%;
   margin-right: 10px;
-}
+} */
 
 .business-dropdown-content {
   padding: 20px;
