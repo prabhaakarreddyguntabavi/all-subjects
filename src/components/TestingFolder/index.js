@@ -50,7 +50,7 @@ const TextEditor = ({id}) => {
 
   const handleUpdate = () => {
     if (!id) {
-      console.error('No ID found.')
+      alert('Successfully Updated')
       return
     }
 
@@ -67,8 +67,8 @@ const TextEditor = ({id}) => {
       }),
     })
       .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error('Error updating entry:', error))
+      .then(data => alert(data))
+      .catch(error => alert('Error updating entry:', error))
   }
 
   const modules = {

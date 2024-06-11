@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import {useNavigate} from 'react-router-dom'
 import {MdKeyboardArrowDown, MdKeyboardArrowUp} from 'react-icons/md'
 import {GrEdit} from 'react-icons/gr'
+import TextEditor from '../TestingFolder'
 
 import ReviewsBox from '../ReviewsBox'
 
@@ -125,10 +126,7 @@ const DataEntryOperationsSubject = () => {
             </div>
             {showTopics === eachLesson.id && (
               <div className="detailed-container">
-                <ul className="dropdown-content">
-                  <li>First Point</li>
-                  <li>Second Point</li>
-                </ul>
+                <TextEditor id={eachLesson.id} />
                 <div className="edit-detailed">
                   <GrEdit
                     onClick={() => setShowTextAreaFunction(eachLesson.id)}

@@ -67,8 +67,8 @@ const ReviewsBox = ({id}) => {
       }),
     })
       .then(response => response.json())
-      .then(data => console.log(data))
-      .catch(error => console.error('Error updating entry:', error))
+      .then(data => alert(data))
+      .catch(error => alert('Error updating entry:', error))
   }
 
   const modules = {
